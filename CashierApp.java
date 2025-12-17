@@ -23,11 +23,11 @@ public class CashierApp {
 		CashierQueue productQueue = new CashierQueue();
 		
 		
-		productQueue.addProduct(new Products("Dell",15000));
-		productQueue.addProduct(new Products("HP",10000));
-		productQueue.addProduct(new Products("Macbook",38000));
-		productQueue.addProduct(new Products("Samsung",20000));
-		productQueue.addProduct(new Products("Lenovo",23000));
+		productQueue.addProduct(new Products("Dell",15000),false);
+		productQueue.addProduct(new Products("HP",10000),false);
+		productQueue.addProduct(new Products("Macbook",38000),false);
+		productQueue.addProduct(new Products("Samsung",20000),false);
+		productQueue.addProduct(new Products("Lenovo",23000),false);
 		
 		//Initialize userInput to 0
 		int userInp = 0;
@@ -50,11 +50,9 @@ public class CashierApp {
 			case 1:
 				System.out.print("ENTER PRODUCT NAME TO ADD: ");
 				String addProductName = input.nextLine().trim();
-				/*
-				 * addProductName = input.nextLine().trim(); if (addProductName.isEmpty()) {
-				 * System.out.println("INVALID!PLEASE ENTER A PRODUCT NAME TO ADD: ");
-				 * input.nextLine().trim(); continue; }
-				 */
+				System.out.print("ENTER PRODUCT PRICE TO ADD: ");
+				double addProductPrice = input.nextInt();
+				productQueue.addProduct(new Products(addProductName,addProductPrice),true);
 				break;
 			case 2:
 				productQueue.processNexProduct();

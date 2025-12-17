@@ -12,11 +12,13 @@ public class CashierQueue {
 	}
 
 	//Method to add a new product at the end of the queue
-	public void addProduct(Products products) {
+	public void addProduct(Products products,boolean showMessage) {
 		productQueue.add(products);
-		System.out.println("PRODUCT ADDED TO CHECKOUT LINE: " + products.getProductName()
-            + " (₱" + String.format("%.2f", products.getProductPrice()) + ")"
-        );
+		if(showMessage) {
+			System.out.println("PRODUCT ADDED TO CHECKOUT LINE: " + products.getProductName()
+	            + " (₱" + String.format("%.2f", products.getProductPrice()) + ")"
+	        );
+		}
 	}
 	//Show products waiting in queue
 	public void showProducts() {
@@ -26,7 +28,7 @@ public class CashierQueue {
 		for(Products product: productQueue) {
 			System.out.println("-" + product.getProductName());
 		}
-		System.out.println("TOTAL NUMBER OF PRODUCTS: " + productQueue.size());
+		System.out.println("PRODUCTS LEFT IN QUEUE: " + productQueue.size());
 	}
 	//Process next product
 	public void processNexProduct() throws InterruptedException{
@@ -40,6 +42,7 @@ public class CashierQueue {
         System.out.println("TOTAL BILL SO FAR: ₱" + String.format("%.2f", totalBill));
 	}
 	public double getTotalBill() {
+		System.out.print("TOTAL BILL SO FAR: " + totalBill + " \n ");
 		return totalBill;
 	}
 }
