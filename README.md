@@ -1,0 +1,1 @@
+"# bpi-training-group-activities" 
