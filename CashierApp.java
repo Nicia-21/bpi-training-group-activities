@@ -20,7 +20,7 @@ public class CashierApp {
 		Scanner input = new Scanner(System.in);
 		
 		//Create a Cashier Queue Object
-		CashierQueue productQueue = new CashierQueue();
+		ProductQueue productQueue = new ProductQueue();
 		
 		
 		productQueue.addProduct(new Products("Dell",15000),false);
@@ -31,7 +31,7 @@ public class CashierApp {
 		
 		//Initialize userInput to 0
 		int userInp = 0;
-		
+		double addProductPrice = 0;
 		//Loop continues until user enters 5
 		do {
 			//call mainMenu method
@@ -51,8 +51,9 @@ public class CashierApp {
 				System.out.print("ENTER PRODUCT NAME TO ADD: ");
 				String addProductName = input.nextLine().trim();
 				System.out.print("ENTER PRODUCT PRICE TO ADD: ");
-				double addProductPrice = input.nextInt();
-				productQueue.addProduct(new Products(addProductName,addProductPrice),true);
+				addProductPrice = input.nextInt();
+				input.nextLine().trim();
+				productQueue.addProduct(new Products(addProductName,addProductPrice),false);
 				break;
 			case 2:
 				productQueue.processNexProduct();
@@ -64,7 +65,7 @@ public class CashierApp {
 				productQueue.getTotalBill();
 				break;
 			case 5:
-				System.out.println("CLOSING CASHIER LINE... THANK YOU!");
+				productQueue.getFinalTotalBill();
 				break;
 			default:
 				 System.out.println("INVALID CHOICE! ENTER A VALUE FROM 1 TO 5.");

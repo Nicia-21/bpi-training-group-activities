@@ -10,7 +10,7 @@ public class Products {
 			System.out.println("PRODUCT NAME CANNOT BE EMPTY!");
 			return;
 		}
-		if(productPrice < 0) {
+		if(productPrice < 0 ) {
 			System.out.println("PRICE CANNOT BE NEGATIVE!");
 			return;
 		}
@@ -34,8 +34,9 @@ public class Products {
 		this.productName = productName.trim();
 	}
 	public void setProductPrice(double productPrice) {
+		
 		if(productPrice < 0) {
-			throw new IllegalArgumentException("PRICE CANNOT BE NEGATIVE!");
+			System.out.println("PRICE CANNOT BE NEGATIVE!\n");
 		}
 		this.productPrice = productPrice;
 	}
