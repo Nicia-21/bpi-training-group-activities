@@ -53,7 +53,7 @@ public class CashierApp {
 				System.out.print("ENTER PRODUCT PRICE TO ADD: ");
 				addProductPrice = input.nextInt();
 				input.nextLine().trim();
-				productQueue.addProduct(new Products(addProductName,addProductPrice),false);
+				productQueue.addProduct(new Products(addProductName,addProductPrice),true);
 				break;
 			case 2:
 				productQueue.processNexProduct();
