@@ -89,7 +89,7 @@ public class LibraryApplication implements Startable{
 		library.addBook(new Book("The Odyssey","Homer",4));
 		library.addBook(new Book("I Know What You Did Last Summer","Lois Duncan",5));
 		
-		//Initialize userInput to 0
+		
 		int choice;
 		do {
 			//call mainMenu method
